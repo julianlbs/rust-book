@@ -8,6 +8,16 @@ fn main() {
     let mut choice = String::new();
     io::stdin().read_line(&mut choice).expect("Failed to read line");
 
+    while choice.trim() != "1" && choice.trim() != "2" {
+        println!("Invalid choice");
+        println!("Select the convertion you want to perform");
+        println!("1. Fahrenheit to Celsius");
+        println!("2. Celsius to Fahrenheit");
+
+        choice = String::new();
+        io::stdin().read_line(&mut choice).expect("Failed to read line");
+    }
+
     match choice.trim() {
         "1" => {
             println!("Enter the temperature in Fahrenheit:");
